@@ -1,4 +1,4 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
 	<title>Django Girls blog</title>
@@ -7,18 +7,15 @@
 <div>
 	<h1><a href="">Django Girls Blog</h1>
 </div>
-
+{% for post in posts%}
 <div>
-	<p>published: 26.03.2015, 16:53</p>
-	<h2><a href="">My first post</a></h2>
-	<p>Aenean eu algo bla bla bla</p>
-</div>
+	<p>published: {{ post.published_date }} </p>
+	<h1><a href="">{{post.title}}</a></h1>
+	<p>{{post.text|linebreaks}}</p>
 
-<div>
-	<p>published: 26.03.2016, 16:59</p>
-	<h2><a href="">My second post</a></h2>
-	<p>bla bla bla bla</p>
 </div>
+	
+{% endfor %}
 
 </body>
 </html>
